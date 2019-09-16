@@ -3,10 +3,11 @@ import axios from 'axios';
 import SearchBar from './SearchBar';
 
 
-class App extends React.Component {state = { images:[] };
+class App extends React.Component {
+  state = { images:[] };
 
-
-  onSearchSubmit(term) {
+  // Turn this into a arrow function to bind this to fetch data
+  onSearchSubmit = (term) => {
     axios.get('https://api.unsplash.com/search/photos', {
       // Diffrent query parameters
       params:  { query: term },
